@@ -21,6 +21,7 @@ export const profile: Profile = {
 export const about = {
     heading: "About Me",
     description: "I am a frontend developer with experience in building responsive and user-friendly web applications. I have a strong understanding of HTML, CSS, and JavaScript, and I am always eager to learn new technologies and improve my skills.",
+    imageUrl: "https://example.com/about.jpg",
     skills: [
         {
             icon: PlayIcon,

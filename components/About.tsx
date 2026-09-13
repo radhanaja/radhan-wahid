@@ -20,13 +20,13 @@ export default function About() {
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-400 lg:max-w-none">
                 {about.skills.map((skill) => (
-                  <div key={skill.name} className="relative pl-9">
+                  <div key={skill.title} className="relative pl-9">
                     <dt className="inline font-semibold text-white">
                       <skill.icon
                         aria-hidden="true"
                         className="absolute top-1 left-1 size-5 text-indigo-400"
                       />
-                      {skill.name}
+                      {skill.title}
                     </dt>{" "}
                     <dd className="inline">{skill.description}</dd>
                   </div>

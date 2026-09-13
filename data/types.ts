@@ -6,6 +6,7 @@ export interface Profile {
     overview: string;
     cvUrl: string;
     whatsappUrl: string;
+    contactUrl?: string;
 }
 
 export interface About {

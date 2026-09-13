@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import { profile } from "@/data/data";
+import { contact } from "@/data/data";
 
 interface ContactFormData {
   name: string;
@@ -59,7 +59,7 @@ export default function ContactForm() {
       `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
     );
 
-    window.location.href = `mailto:${profile.contact}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`;
     setFormData(initialFormData);
     setStatus("success");
   };

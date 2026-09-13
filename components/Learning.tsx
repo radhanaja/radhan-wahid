@@ -21,10 +21,12 @@ export default function Learning() {
               <div key={feature.title} className="relative pl-16">
                 <dt className="text-base/7 font-semibold text-white">
                   <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
-                    <feature.icon
-                      aria-hidden="true"
-                      className="size-6 text-white"
-                    />
+                    {feature.icon ? (
+                      <feature.icon
+                        aria-hidden="true"
+                        className="size-6 text-white"
+                      />
+                    ) : null}
                   </div>
                   {feature.title}
                 </dt>
