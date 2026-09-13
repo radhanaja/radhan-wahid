@@ -1,29 +1,4 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
-
-const features = [
-  {
-    name: "Push to deploy.",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: "SSL certificates.",
-    description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Database backups.",
-    description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-    icon: ServerIcon,
-  },
-];
+import { about } from "@/data/data"
 
 export default function About() {
   return (
@@ -36,7 +11,7 @@ export default function About() {
                 Deploy faster
               </h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">
-                A better workflow
+                About Me
               </p>
               <p className="mt-6 text-lg/8 text-gray-300">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -44,16 +19,16 @@ export default function About() {
                 cupiditate blanditiis ratione.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-400 lg:max-w-none">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
+                {about.skills.map((skill) => (
+                  <div key={skill.name} className="relative pl-9">
                     <dt className="inline font-semibold text-white">
-                      <feature.icon
+                      <skill.icon
                         aria-hidden="true"
                         className="absolute top-1 left-1 size-5 text-indigo-400"
                       />
-                      {feature.name}
+                      {skill.name}
                     </dt>{" "}
-                    <dd className="inline">{feature.description}</dd>
+                    <dd className="inline">{skill.description}</dd>
                   </div>
                 ))}
               </dl>
@@ -61,7 +36,7 @@ export default function About() {
           </div>
           <img
             alt="Product screenshot"
-            src="/img/skin.jpg"
+            src={about.imageUrl}
             width={2432}
             height={1442}
             className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:ml-0"

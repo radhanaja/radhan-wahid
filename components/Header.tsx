@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -14,17 +14,34 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header 
+    className= {`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+      isScrolled ? "border-white/10 bg-gray-950/15 shadow-black/10 backdrop-blur-xl"
+       : "border-transparent bg-transparent"
+    }`}
+>
       <nav
         aria-label="Global"
         className="flex items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img alt="" src="/img/logo.svg" className="h-8 w-auto" />
+            <span className="text-lg font-bold text-white">Your Company</span>
+            {/* <img alt="" src="logo.svg" className="h-8 w-auto" /> */}
           </a>
         </div>
         <div className="flex lg:hidden">
