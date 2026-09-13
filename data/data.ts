@@ -106,8 +106,8 @@ export const learning: Learning = {
 export const contact = {
     heading: "Contact Me",
     description: "Feel free to reach out to me for any inquiries or collaborations.",
-    email: "radhanwahid.1453@gmail.com",
-    phone: "+62 812 1063 3016",
+    email: "radhanwahid553@gmail.com",
+    phone: "+6281210633016",
     address: "Bandung, Indonesia",
     socialLinks: [
         {
